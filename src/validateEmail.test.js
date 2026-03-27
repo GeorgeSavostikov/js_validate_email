@@ -56,4 +56,8 @@ describe(`Function 'validateEmail':`, () => {
     expect(validateEmail('test@my-domain.com')).toBeTruthy();
     expect(validateEmail('test@service1.com')).toBeTruthy();
   });
+
+  it(`should return true for email with dot in personal part`, () => {
+    expect(validateEmail('first.last@mail.com')).toBeTruthy();
+  });
 });
