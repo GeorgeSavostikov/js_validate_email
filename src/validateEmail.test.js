@@ -46,4 +46,14 @@ describe(`Function 'validateEmail':`, () => {
   it(`should return false if domain has no dot`, () => {
     expect(validateEmail('false@email')).toBeFalsy();
   });
+
+  it(`should return true for email with hyphen and underscore in personal part`, () => {
+    expect(validateEmail('test-user@mail.com')).toBeTruthy();
+    expect(validateEmail('first_last@mail.com')).toBeTruthy();
+  });
+
+  it(`should return true for email with hyphen and digits in domain`, () => {
+    expect(validateEmail('test@my-domain.com')).toBeTruthy();
+    expect(validateEmail('test@service1.com')).toBeTruthy();
+  });
 });
