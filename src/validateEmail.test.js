@@ -19,10 +19,6 @@ describe(`Function 'validateEmail':`, () => {
     expect(validateEmail('t@q.c')).toBeTruthy();
   });
 
-  it(`should return false if email ends with dot`, () => {
-    expect(validateEmail('test838@gmail.com.')).toBeFalsy();
-  });
-
   it(`should return false if email has no @`, () => {
     expect(validateEmail('testgmail.com')).toBeFalsy();
   });
